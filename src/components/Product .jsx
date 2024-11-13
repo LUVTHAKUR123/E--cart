@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { items } from "./Data";
 
-const Product = () => {
+const Product = (items) => {
+  console.log(items, "dsjbfhbdshhf");
   return (
     <div className="container">
       <div className="row">
-        {items.map((product) => (
+        {items.items.map((product) => (
           <div
             key={product.id}
-            className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            className="col-12 col-sm-6 col-md-6 col-lg-3 mb-4"
           >
             <div className="card h-100" alt="wwd">
               <Link

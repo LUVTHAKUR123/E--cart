@@ -4,13 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDeatil from "./components/ProductDetail";
 import Cart from "./components/Cart";
 import SearchItem from "./components/SearchItem";
+import { items } from "./components/Data";
+import { useState } from "react";
 const App = () => {
+  const [data, setData] = useState([...items]);
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar setData={setData} />
         <Routes>
-          <Route path="/" element={<Product />} />
+          <Route path="/" element={<Product items={data} />} />
           <Route path="/product/:id" element={<ProductDeatil />} />
           <Route path="/search/item" element={<SearchItem />} />
           <Route path="/cart" element={<Cart />} />

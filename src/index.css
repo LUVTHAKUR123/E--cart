@@ -37,3 +37,20 @@ input::placeholder {
   color: white;
   font-weight: bold;
 }
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img img {
+  width: 300px;
+  height: 300px;
+}
+
+.con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
