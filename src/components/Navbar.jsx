@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { items } from "./Data";
 import { useState } from "react";
 
-const Navbar = (setData) => {
+const Navbar = (cart, setData) => {
+  console.log(cart, "fromHeader");
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const filterByCategory = (category) => {
@@ -34,9 +35,14 @@ const Navbar = (setData) => {
               placeholder="Search product"
             />
           </form>
-          <Link to={"."} className="cart">
-            {" "}
-            Cart{" "}
+          <Link to={"/cart"} className="cart">
+            <button type="button" className="btn btn-primary position-relative">
+              Cart
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {cart.cart.length}
+                <span className="visually-hidden">unread messages</span>
+              </span>
+            </button>
           </Link>
         </div>
         <div className="nav-bar-wrapper">
